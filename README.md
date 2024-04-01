@@ -48,18 +48,16 @@ QUIZ APP - Frontend
 
 |--- Admin Login \
 |--- Admin Dashboard \
-	|--- Student (Default)
-	|--- Voucher (CRUD + pagination)
-	|--- Exam (CRUD + pagination)
+	|--- Student (Default) \
+	|--- Voucher (CRUD + pagination) \
+	|--- Exam (CRUD + pagination) \
 
 
-QUIZ APP - Backend
+## QUIZ APP - Backend
 
 API required
 
-|--- Users
-|--- Questions
-|--- Voucher
-|--- Exam
-
-Project Collaboration - Github
+|--- Users \
+|--- Questions \
+|--- Voucher \
+|--- Exam \
