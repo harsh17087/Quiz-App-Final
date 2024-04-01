@@ -1,0 +1,43 @@
+<!-- <p>This is the dashboard of quizappdashboard. Left vertical nav panel consists of result,question,voucher,exam. And make a carousel</p> -->
+
+<mat-sidenav-container class="nav-container" autosize>
+  
+  <!-- [fixedTopGap]="100" [fixedBottomGap]="100" -->
+  <mat-sidenav mode="side" opened class="side-nav" [fixedInViewport]="true" >
+    <img src="https://t3.ftcdn.net/jpg/05/32/73/04/360_F_532730425_EiwrFXiBgzIedTDr44MBmYsxYZ0opAnK.jpg" alt="" style="width: 10rem;margin-left: 1rem;">    
+    <mat-nav-list style="margin-top: 1rem;">
+            <a href="maindash/result" mat-list-item>
+              <span class="entry">
+                <mat-icon>assessment</mat-icon>
+                <span>Result</span>
+              </span>
+            </a><br><br><br>
+            <a href="maindash/voucher" mat-list-item>
+              <span class="entry">
+                <mat-icon>verified_user</mat-icon>
+                <span>Voucher</span>
+              </span>
+            </a><br><br><br>
+            <a href="maindash/exam" mat-list-item>
+              <span class="entry">
+                <mat-icon>assignment_ind</mat-icon>
+                <span>Exam</span>
+              </span>
+            </a>
+          </mat-nav-list>
+
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <mat-toolbar class="title-toolbar"> 
+        <mat-toolbar-row style="background-color: aqua;"> 
+          <span class="title-center">Welcome <b>{{showName}}</b></span> 
+          
+          <span class="log-out"></span> 
+           <button (click)="logOut()" class="btn btn-outline-danger"><mat-icon class="example-icon" aria-hidden="false">exit_to_app</mat-icon></button>
+        </mat-toolbar-row> 
+      </mat-toolbar>
+      <router-outlet/>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

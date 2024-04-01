@@ -1,0 +1,22 @@
+
+<table class="table table-hover">
+    <thead class="table-header table-dark table-bordered table-striped table-responsive">
+        <tr>
+            <th>Sr. No</th>
+            <th>Name</th>
+            <th>Result</th>
+            <th>Total Marks</th>
+            <th>Obtained Marks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let result of resultArray?.data | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{result.id}}</td>
+            <td>{{result.stdName}}</td>
+            <td>{{result.resultStatus}}</td>
+            <td>{{result.totalMarks}}</td>
+            <td>{{result.obtainedMarks}}</td>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event" style="float: right;"></pagination-controls>

@@ -1,0 +1,21 @@
+<p class="mat-subheader">Add new exam</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <form #refEmp="ngForm" (ngSubmit)="addData(refEmp.value)">
+            <div>
+                <label for="id" class="form-label">Id</label>
+                <input type="text" name="id" class="form-control" id="id" [ngModel]="examData?.id" required>
+            </div>
+            <div>
+                <label for="code" class="form-label">Exam Name</label>
+                <input type="text" class="form-control" name="exam" id="code" [ngModel]="examData?.exam" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-primary btn-sm ">Submit</button>&nbsp;
+            <button type="reset" class="btn btn-outline-primary btn-sm ">Cancel</button>&nbsp;
+            
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

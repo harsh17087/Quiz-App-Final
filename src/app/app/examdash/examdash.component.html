@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="card border-primary text-center mt-5" style="background-color: lightsteelblue;" >
+            <h2 class="card-tittle">Admin-Login</h2>
+                
+            <form #refdash="ngForm" [formGroup]="userData" (ngSubmit)="checkData()" >
+               
+                <div style="padding: 10px;">
+                    <label for="userId" class="form-label">Write User Id</label>
+                    <input type="text" name="userId" id="userId" formControlName="userId" class="form-control">
+                    <div class="alert alert-danger" *ngIf="userData.get('userId').invalid && userData.get('userId').touched">
+                        <div *ngIf="userData.get('userId').errors.required">This Field is Required</div>
+                        <div *ngIf="userData.get('userId').errors.pattern">Invalid email format. Please enter a valid email address.</div>
+                      </div>
+                </div><br><br>
+
+                <div style="padding: 10px;">
+                    <label for="userPass" class="form-label">Write User Password</label>
+                    <input type="password" name="userPass" id="userPass" formControlName="userPass" class="form-control">
+                    <div class="alert alert-danger" *ngIf="userData.get('userPass').invalid && userData.get('userPass').touched">
+                        <div *ngIf="userData.get('userPass').errors.required">This Field is Required</div>
+                        <div *ngIf="userData.get('userPass').errors.pattern">Password must contain number,special character and uppercase as well as lowercase And it must contain min-6 and max-16 character</div>
+                      </div>
+                </div><br> <br>
+                <div style="padding: 10px;">
+                    <label for="urole" class="form-label">Role</label> 
+                    <select name="role" id="urole" placeholder="kwndw" formControlName="role" class="form-control" style="text-align: center;">
+                     <option value="">Select Your Role</option>
+                        <option [value]="job" id="urole" *ngFor="let job of roles">
+                            {{job}}
+                        </option>
+                    </select>
+                </div><br><br>
+                <button type="submit" class="btn btn-outline-primary" [disabled]="refdash.invalid">Log-in</button> <br> <br>
+                </form>
+              
+        </div>
+    </div>
+     <div class="col-4"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>login works!</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <form [formGroup]="userData" (ngSubmit)="addData()">
+            <div>
+                <label for="userId" class="form-label">User ID</label>
+                <input type="text" name="userId" class="form-control" id="userId" formControlName="uid" >
+            </div>
+            <div>
+                <label for="userpass" class="form-label">User Password</label>
+                <input type="text" class="form-control" name="userpass" id="userpass" formControlName="upass">
+            </div>
+            <div>
+                <label for="urole" class="form-label">Role</label>
+                <input type="text" class="form-control" name="urole" id="urole" formControlName="role"> -->
+                <!-- <select name="role" id="urole" formControlName="role" class="form-control">
+                    <option [value]="job" id="urole" *ngFor="let job of roles">
+                        {{job}}
+                    </option>
+                </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-primary btn-sm ">Submit</button>&nbsp;
+            <button type="reset" class="btn btn-outline-primary btn-sm">Reset</button>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div> -->

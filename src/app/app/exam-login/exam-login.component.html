@@ -1,0 +1,32 @@
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="card border-primary  mt-5 px-2 col-6" style="background-color: lightblue; width: 420px;
+    margin: auto;">
+        <h2 class="card-tittle text-center">Exam Login</h2>
+        <form #reflogin="ngForm" [formGroup]="voucherData" (ngSubmit)="checkData()">
+            <div>
+                <label for="code" class="form-label text-center">Voucher Code</label>
+                <input type="text" name="voucherId" placeholder="Voucher Code" class="form-control" id="code" formControlName="voucherId" >
+                <div class="alert alert-danger" *ngIf="voucherData.get('voucherId').invalid && voucherData.get('voucherId').touched">
+                    <div *ngIf="voucherData.get('voucherId').errors.required">This Field is Required</div>
+                    
+                  </div>
+            </div> <br>
+            
+            <div>
+                <label for="uexam" class="form-label">Exam</label> 
+                <select name="exam" id="uexam" placeholder="" formControlName="exam" class="form-control" style="text-align: center;">
+                 <option value="">Select Your Exam</option>
+                    <option [value]="examname.exam" id="uexam" *ngFor="let examname of examDb?.data">
+                        {{examname.exam}}
+                    </option>
+                </select>
+            </div><br><br>
+            <button type="submit" style="margin-left: 31%;" class="btn btn-outline-primary btn-sm" [disabled]="reflogin.invalid">Submit</button>&nbsp; &nbsp;
+            <button type="reset"  class="btn btn-outline-primary btn-sm">Reset</button> <br> <br>
+            
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

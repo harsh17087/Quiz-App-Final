@@ -1,0 +1,32 @@
+
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="card border-primary  mt-5 px-2 col-6" style="background-color: lightblue; width: 420px;
+    margin: auto;">
+        <h2 class="card-tittle text-center">User Login</h2>
+        <form #reflogin="ngForm" [formGroup]="userData" (ngSubmit)="checkData()">
+            <div>
+                <label for="userId" class="form-label text-center">User ID</label>
+                <input type="text" name="userId" placeholder="name@company.com" class="form-control" id="userId" formControlName="userId" >
+                <div class="alert alert-danger" *ngIf="userData.get('userId').invalid && userData.get('userId').touched">
+                    <div *ngIf="userData.get('userId').errors.required">This Field is Required</div>
+                    <div *ngIf="userData.get('userId').errors.pattern">Invalid email format. Please enter a valid email address.</div>
+                  </div>
+            </div> <br>
+            <div>
+                <label for="userpass" class="form-label">User Password</label>
+                <input type="password" class="form-control" placeholder="********" name="userPass" id="userpass" formControlName="userPass">
+                <div class="alert alert-danger" *ngIf="userData.get('userPass').invalid && userData.get('userPass').touched">
+                    <div *ngIf="userData.get('userPass').errors.required">This Field is Required</div>
+                    <div *ngIf="userData.get('userPass').errors.pattern">Password must contain number,special character and uppercase as well as lowercase And it must contain min-6 and max-16 character</div>
+                  </div>
+            </div>
+            <br>
+            <button type="submit" style="margin-left: 31%;" class="btn btn-outline-primary btn-sm" [disabled]="reflogin.invalid">Submit</button>&nbsp; &nbsp;
+            <button type="reset"  class="btn btn-outline-primary btn-sm" [disabled]="reflogin.invalid">Reset</button> <br> <br>
+            <h3>I am a new Student <a href="register">Click here</a></h3>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

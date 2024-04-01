@@ -1,0 +1,22 @@
+
+<p class="mat-subheader">Edit Voucher</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <form #refEmp="ngForm" (ngSubmit)="addData(refEmp.value)">
+            <div>
+                <label for="id" class="form-label">Id</label>
+                <input type="text" name="id" class="form-control" id="id" [ngModel]="voucherData?.id" >
+            </div>
+            <div>
+                <label for="code" class="form-label">Voucher Code</label>
+                <input type="text" class="form-control" name="voucher_code" id="code" [ngModel]="voucherData?.voucher_code">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-primary btn-sm ">Submit</button>&nbsp;
+            <button type="reset" class="btn btn-outline-primary btn-sm ">Cancel</button>&nbsp;
+            
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

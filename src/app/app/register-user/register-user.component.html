@@ -1,0 +1,108 @@
+
+<form #refutdf="ngForm" [formGroup]="signUpForm" (ngSubmit)="submitData(refutdf.value)" class="file">
+    <div class="container" style="margin-top: 100px;">
+        <div class="display-6 text-center"><strong>Create Your Account</strong> </div><br>
+        <div class="row">
+            <div class="col-6">
+                <label class="form-label">Enter Your Full Name:</label>
+                <input type="text" placeholder="Your name" class="form-control" name="fname" formControlName="fname">
+                <div class="alert alert-danger" *ngIf="signUpForm.get('fname').invalid && signUpForm.get('fname').touched">
+                    <div *ngIf="signUpForm.get('fname').errors.required">This Field is Required</div>
+                    <div *ngIf="signUpForm.get('fname').errors.pattern">Employee name must contain only character min-3 and max-20</div>
+                  </div>
+        
+            </div>
+            <div class="col-6">
+                <label class="form-label">Enter Your Email:</label>
+                <input type="text" placeholder="name@company.com" class="form-control" name="email" formControlName="email">
+                <div class="alert alert-danger" *ngIf="signUpForm.get('email').invalid && signUpForm.get('email').touched">
+                    <div *ngIf="signUpForm.get('email').errors.required">This Field is Required</div>
+                    <div *ngIf="signUpForm.get('email').errors.pattern">Invalid email format. Please enter a valid email address.</div>
+                  </div>
+               
+            </div>
+        </div>
+<br>
+        <div class="row">
+            <div class="col-6">
+                <label class="form-label">Enter Your Contact No:</label>
+                <input type="text" placeholder="contact number" class="form-control" name="contact" formControlName="contact">
+                <div class="alert alert-danger" *ngIf="signUpForm.get('contact').invalid && signUpForm.get('contact').touched">
+                    <div *ngIf="signUpForm.get('contact').errors.required">This Field is Required</div>
+                    <div *ngIf="signUpForm.get('contact').errors.pattern">Contact Details must contain digits between 0-9</div>
+                  </div>
+        
+            </div>
+            <br>
+            <div class="col-6">
+                <label class="form-label">Select Your Gender:</label> <br>
+                <input type="radio" class="form-check-input"  name="gender" formControlName="gender" value="male"> Male
+                <label class="form-check-label" for="male"></label> &nbsp;
+                <input type="radio" class="form-check-input"  name="gender" formControlName="gender" value="female"> Female
+                <label class="form-check-label" for="female"></label>
+                <div class="alert alert-danger" *ngIf="signUpForm.get('gender').invalid && signUpForm.get('gender').touched">
+                    <div *ngIf="signUpForm.get('gender').errors.required">This Field is Required</div>
+                    <div *ngIf="signUpForm.get('gender').errors.pattern">Invalid email format. Please enter a valid email address.</div>
+                  </div>
+               
+            </div>
+        </div>
+
+
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <label class="form-label">Enter Your Password</label>
+                <input type="password" placeholder="********" class="form-control" name="password" formControlName="password">
+                <div class="alert alert-danger" *ngIf="signUpForm.get('password').invalid && signUpForm.get('password').touched">
+                    <div *ngIf="signUpForm.get('password').errors.required">This Field is Required</div>
+                    <div *ngIf="signUpForm.get('password').errors.pattern">Password must contain number,special character and uppercase as well as lowercase And it must contain min-6 and max-16 character</div>
+                  </div>
+              
+            </div>
+            <div class="col-6">
+                <label class="form-label">Enter Confirm Password</label>
+                <input type="password" placeholder="********" class="form-control" name="upass2" formControlName="upass2">
+             
+                <div class="alert alert-danger" *ngIf="signUpForm.get('upass2').invalid && signUpForm.get('upass2').touched">
+                    <div *ngIf="signUpForm.get('upass2').errors.required">This Field is Required</div>
+                    <div *ngIf="signUpForm.get('upass2').errors.pattern">Password must contain number,special character and uppercase as well as lowercase And it must contain min-6 and max-16 character</div>
+                  </div>
+                <div class="alert alert-danger" *ngIf="signUpForm.get('upass2').touched && signUpForm.get('password').value!=signUpForm.get('upass2').value">
+                    Password doesn't match
+                </div>
+            </div>
+        </div>
+        <br>
+       
+        <!-- <div class="row">
+            <div class="col-6 line-1">
+                
+            </div>
+            <b class="text-center">or</b>
+            <div class="col-6 line-1">
+                
+            </div> 
+        </div> 
+        <br> -->
+        <!-- <div class="row">
+            <div class="col-4 text-center"><button><i class="fa fa-google" aria-hidden="true"></i></button></div>
+            <div class="col-4 text-center"><button><i class="fa fa-facebook" aria-hidden="true"></i></button></div>
+            <div class="col-4 text-center"><button><i class="fa fa-linkedin" aria-hidden="true"></i></button></div>
+        </div>
+        <br> -->
+        <!-- <div class="row">
+            <div class="col-12">
+                <input type="checkbox" class="form-check-input" name="term" formControlName="term">&nbsp;
+                <label for="" class="form-check-label">I accept the Terms and Conditions</label>
+                <div class="alert alert-danger" *ngIf="signUpForm.get('term').invalid && signUpForm.get('term').touched ">
+                    Please accept Terms and Conditions
+                </div>
+            </div>
+        </div> -->
+        <br>
+        <div><button type="submit" style="margin-left: 39%;" class="btn btn-outline-primary btn-block" [disabled]="refutdf.invalid" >Submit</button>&nbsp; &nbsp; 
+        <button type="reset" class="btn btn-outline-secondary btn-block" [disabled]="refutdf.invalid" >Cancel</button></div> <br>
+    </div>
+     
+    </form>

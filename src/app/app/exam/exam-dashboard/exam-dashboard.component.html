@@ -1,0 +1,29 @@
+<button *ngIf="adminLogin" type="button" routerLink="examadd" class="btn btn-outline-primary">Add</button>
+
+<table class="table table-hover table-bordered table-striped table-responsive">
+    <thead class="table-header table-dark">
+        <tr>
+            <div class="row">
+                <div class="col-4"><th>Id</th></div>
+                <div class="col-4"><th>Exam</th></div>
+                <div *ngIf="adminLogin"  class="col-4"><th>Actions</th></div>
+            </div>
+    
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let _exam of examArray?.data | paginate: { itemsPerPage: 5, currentPage: p }">
+            <div class="row">
+                <div class="col-4"><td>{{_exam.id}}</td></div>
+                <div class="col-4"><td>{{_exam.exam}}</td></div>
+                <div class="col-4" *ngIf="adminLogin"><td>
+                    <button type="button" [routerLink]="['examedit',_exam._id]" class="btn btn-outline-warning btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button>&nbsp;
+                    <button type="button" (click)="deleteData(_exam._id)" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i>Delete</button>
+                </td></div>
+            </div>
+            
+    
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event" style="float: right;"></pagination-controls>

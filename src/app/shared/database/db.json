@@ -1,0 +1,83 @@
+{
+    "employee": [
+      {
+        "id": "1",
+        "name": "Kohli",
+        "post": "Batsman",
+        "salary": 12000,
+        "address": "Delhi"
+      },
+      {
+        "id": "2",
+        "name": "Rohit",
+        "post": "Opener",
+        "salary": 11000,
+        "address": "Mumbai"
+      },
+      {
+        "id": "3",
+        "name": "Gill",
+        "post": "Opener",
+        "salary": 13000,
+        "address": "Chandigarh"
+      },
+      {
+        "empName": "Dhruv Jurel",
+        "empPost": "Keeper",
+        "empSalary": 15000,
+        "empAddress": "UP",
+        "id": "4"
+      },
+      {
+        "name": "Sarfaraz Ahmed",
+        "post": "Developer",
+        "salary": "1000",
+        "address": "Waterside",
+        "id": "5"
+      }
+    ],
+    "users": [
+      {
+        "id": "1",
+        "uid": "admin@gmail.com",
+        "upass": "admin@123",
+        "role": "admin"
+      },
+      {
+        "id": "2",
+        "uid": "king@gmail.com",
+        "upass": "king@123",
+        "role": "trainer"
+      },
+      {
+        "id": "3",
+        "uid": "hero@gmail.com",
+        "upass": "hero@123",
+        "role": "counsellor"
+      },
+      {
+        "id": "4",
+        "uid": "jack@gmail.com",
+        "upass": "jack@123",
+        "role": "manager"
+      },
+      {
+        "id": "5",
+        "uid": "knight@gmail.com",
+        "upass": "knight@123",
+        "role": "staff"
+      },
+      {
+        "uid": "harsh@gmail.com",
+        "upass": "queen@123",
+        "role": "assistant",
+        "id": "6"
+      },
+      {
+        "uid": "harsh123@gmail.com",
+        "upass": "user@123",
+        "role": "manager",
+        "id": "flW6TS2"
+      }
+    ]
+  }
